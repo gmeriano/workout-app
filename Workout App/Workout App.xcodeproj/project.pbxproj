@@ -16,6 +16,7 @@
 		FAA893BA248714B4002E0246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA893B8248714B4002E0246 /* LaunchScreen.storyboard */; };
 		FAA893C5248714B5002E0246 /* Workout_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893C4248714B5002E0246 /* Workout_AppTests.swift */; };
 		FAA893D0248714B5002E0246 /* Workout_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893CF248714B5002E0246 /* Workout_AppUITests.swift */; };
+		FAA893DE248718A9002E0246 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893DD248718A9002E0246 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FAA893CB248714B5002E0246 /* Workout AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workout AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA893CF248714B5002E0246 /* Workout_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout_AppUITests.swift; sourceTree = "<group>"; };
 		FAA893D1248714B5002E0246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA893DD248718A9002E0246 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				FAA893B6248714B4002E0246 /* Assets.xcassets */,
 				FAA893B8248714B4002E0246 /* LaunchScreen.storyboard */,
 				FAA893BB248714B4002E0246 /* Info.plist */,
+				FAA893DD248718A9002E0246 /* Exercise.swift */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA893DE248718A9002E0246 /* Exercise.swift in Sources */,
 				FAA893B2248714AA002E0246 /* SecondViewController.swift in Sources */,
 				FAA893B0248714AA002E0246 /* FirstViewController.swift in Sources */,
 				FAA893AC248714AA002E0246 /* AppDelegate.swift in Sources */,
