@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09DEC4E7248718640038D358 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC4E6248718640038D358 /* Workout.swift */; };
 		FAA893AC248714AA002E0246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893AB248714AA002E0246 /* AppDelegate.swift */; };
 		FAA893AE248714AA002E0246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893AD248714AA002E0246 /* SceneDelegate.swift */; };
 		FAA893B0248714AA002E0246 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893AF248714AA002E0246 /* FirstViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09DEC4E6248718640038D358 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		FAA893A8248714AA002E0246 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA893AB248714AA002E0246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA893AD248714AA002E0246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				FAA893AD248714AA002E0246 /* SceneDelegate.swift */,
 				FAA893AF248714AA002E0246 /* FirstViewController.swift */,
 				FAA893B1248714AA002E0246 /* SecondViewController.swift */,
+				09DEC4E6248718640038D358 /* Workout.swift */,
 				FAA893B3248714AA002E0246 /* Main.storyboard */,
 				FAA893B6248714B4002E0246 /* Assets.xcassets */,
 				FAA893B8248714B4002E0246 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				FAA893B2248714AA002E0246 /* SecondViewController.swift in Sources */,
 				FAA893B0248714AA002E0246 /* FirstViewController.swift in Sources */,
 				FAA893AC248714AA002E0246 /* AppDelegate.swift in Sources */,
+				09DEC4E7248718640038D358 /* Workout.swift in Sources */,
 				FAA893AE248714AA002E0246 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
