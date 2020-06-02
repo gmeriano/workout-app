@@ -110,11 +110,11 @@
 				FAA893AF248714AA002E0246 /* FirstViewController.swift */,
 				FAA893B1248714AA002E0246 /* SecondViewController.swift */,
 				09DEC4E6248718640038D358 /* Workout.swift */,
+				FAA893DD248718A9002E0246 /* Exercise.swift */,
 				FAA893B3248714AA002E0246 /* Main.storyboard */,
 				FAA893B6248714B4002E0246 /* Assets.xcassets */,
 				FAA893B8248714B4002E0246 /* LaunchScreen.storyboard */,
 				FAA893BB248714B4002E0246 /* Info.plist */,
-				FAA893DD248718A9002E0246 /* Exercise.swift */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
