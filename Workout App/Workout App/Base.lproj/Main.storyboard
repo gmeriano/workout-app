@@ -68,6 +68,26 @@
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="euf-1p-h5l">
                                 <rect key="frame" x="5" y="144" width="404" height="664"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9R-XY-LCR" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="221.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L3-0X-xyI" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="221.5" width="404" height="221"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxq-0J-hiv" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="442.5" width="404" height="221.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pxq-0J-hiv" firstAttribute="width" secondItem="l9R-XY-LCR" secondAttribute="width" id="TRu-M4-2aB"/>
+                                    <constraint firstItem="6L3-0X-xyI" firstAttribute="height" secondItem="l9R-XY-LCR" secondAttribute="height" id="dXF-5x-fkQ"/>
+                                    <constraint firstItem="6L3-0X-xyI" firstAttribute="width" secondItem="l9R-XY-LCR" secondAttribute="width" id="ftg-WH-l0o"/>
+                                    <constraint firstItem="Pxq-0J-hiv" firstAttribute="height" secondItem="l9R-XY-LCR" secondAttribute="height" id="fxc-cA-R5f"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
