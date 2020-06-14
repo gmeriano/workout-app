@@ -66,11 +66,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="euf-1p-h5l">
+                                <rect key="frame" x="5" y="144" width="404" height="664"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="euf-1p-h5l" secondAttribute="trailing" constant="5" id="EDi-Dp-uFH"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="euf-1p-h5l" secondAttribute="bottom" constant="5" id="Wwh-I3-yDN"/>
+                            <constraint firstItem="euf-1p-h5l" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="5" id="lRV-3p-ObM"/>
+                            <constraint firstItem="euf-1p-h5l" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="100" id="lsv-T7-hTR"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
