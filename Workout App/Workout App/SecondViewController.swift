@@ -58,10 +58,10 @@ class SecondViewController: UIViewController {
         
         for index in 0...exerciseArray.count-1 {
             print("hi")
-            let button = UIButton.init(frame: CGRect.zero)
+            let button = UIButton()
             button.setTitle(exerciseArray[index].name, for: .normal)
             button.backgroundColor = UIColor.blue
-            scrollView.addSubview(button)
+            self.stackView.addArrangedSubview(button)
         }
         //scrollView.contentSize.height = CGFloat(45*2)
         
