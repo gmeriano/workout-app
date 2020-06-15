@@ -55,55 +55,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="euf-1p-h5l">
-                                <rect key="frame" x="5" y="144" width="404" height="664"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9R-XY-LCR" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="221.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L3-0X-xyI" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="221.5" width="404" height="221"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxq-0J-hiv" customClass="ExerciseView" customModule="Workout_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="442.5" width="404" height="221.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Pxq-0J-hiv" firstAttribute="width" secondItem="l9R-XY-LCR" secondAttribute="width" id="TRu-M4-2aB"/>
-                                    <constraint firstItem="6L3-0X-xyI" firstAttribute="height" secondItem="l9R-XY-LCR" secondAttribute="height" id="dXF-5x-fkQ"/>
-                                    <constraint firstItem="6L3-0X-xyI" firstAttribute="width" secondItem="l9R-XY-LCR" secondAttribute="width" id="ftg-WH-l0o"/>
-                                    <constraint firstItem="Pxq-0J-hiv" firstAttribute="height" secondItem="l9R-XY-LCR" secondAttribute="height" id="fxc-cA-R5f"/>
-                                </constraints>
-                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-J9-YjY">
+                                <rect key="frame" x="-33" y="222" width="240" height="128"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="jYh-Tt-CZn"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fLv-Zz-BcY"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="euf-1p-h5l" secondAttribute="trailing" constant="5" id="EDi-Dp-uFH"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="euf-1p-h5l" secondAttribute="bottom" constant="5" id="Wwh-I3-yDN"/>
-                            <constraint firstItem="euf-1p-h5l" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="5" id="lRV-3p-ObM"/>
-                            <constraint firstItem="euf-1p-h5l" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="100" id="lsv-T7-hTR"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="1Lm-J9-YjY" secondAttribute="trailing" id="EKY-NY-yAJ"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="1Lm-J9-YjY" secondAttribute="trailing" id="kj6-76-1FK"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="1Lm-J9-YjY" secondAttribute="bottom" id="lLJ-Oa-yv7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercise" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="scrollView" destination="1Lm-J9-YjY" id="PuL-dn-1Yd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
