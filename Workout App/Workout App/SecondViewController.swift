@@ -44,11 +44,6 @@ class SecondViewController: UIViewController {
         self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         
-       
-        
-        
-        
-        
         let exercise1 = Exercise(name: "pushup", image: nil, description: "push up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: 2)
         
         let exercise2 = Exercise(name: "situp", image: nil, description: "sit up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: 1)
@@ -64,9 +59,9 @@ class SecondViewController: UIViewController {
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
         }
-        //scrollView.contentSize.height = CGFloat(45*2)
-        
-        
+    }
+    
+    @IBAction func addExercise(_ sender: Any) {
         
     }
     
