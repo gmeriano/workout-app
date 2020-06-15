@@ -60,42 +60,36 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="i1m-Ph-jkO"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="688-L3-3nc"/>
                             </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="Gs5-me-kwD">
-                                <rect key="frame" x="152" y="348" width="46" height="720"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-5U-zlT">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uo-xa-X6m">
-                                        <rect key="frame" x="0.0" y="230" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqV-e5-oAL">
-                                        <rect key="frame" x="0.0" y="460" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aec-jd-zla">
-                                        <rect key="frame" x="0.0" y="690" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Gs5-me-kwD">
+                                <rect key="frame" x="152" y="348" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xY-xl-rEH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="EXERCISES" id="6fD-kF-KLd">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Jm4-Yr-Oel">
+                                            <connections>
+                                                <action selector="addExercise:" destination="8rJ-Kc-sve" id="VCb-GG-zz7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="1Lm-jQ-NIK"/>
-                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="BLv-aa-E3Q"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2bc-Tr-Xfu" secondAttribute="trailing" id="FG1-E6-DES"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2bc-Tr-Xfu" secondAttribute="trailing" id="Ge4-yX-cgu"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="2bc-Tr-Xfu" secondAttribute="bottom" id="OUp-VJ-ivG"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="2bc-Tr-Xfu" secondAttribute="bottom" id="RAy-qR-k0f"/>
-                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="emd-W1-TJa"/>
-                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="rJW-I2-DjV"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2bc-Tr-Xfu" secondAttribute="trailing" id="GBs-Lf-QoA"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="100" id="P12-fo-RXR"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="2bc-Tr-Xfu" secondAttribute="bottom" id="lsj-f6-OTg"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="p1l-vm-8YN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercise" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="2bc-Tr-Xfu" id="wiq-Ga-vC5"/>
                         <outlet property="stackView" destination="Gs5-me-kwD" id="8Jl-BS-xAH"/>
@@ -126,6 +120,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
