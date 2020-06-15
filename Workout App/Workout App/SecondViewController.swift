@@ -70,8 +70,12 @@ class SecondViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
-        var name = btnsendtag.titleLabel?.text
-        print(name)
+        let name = btnsendtag.titleLabel?.text
+        for ex in exerciseArray {
+            if ex.name == name {
+                print(ex.intensity)
+            }
+        }
     }
    
 }
