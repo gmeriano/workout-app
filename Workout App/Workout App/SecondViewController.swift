@@ -44,7 +44,7 @@ class SecondViewController: UIViewController {
         self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         
-        
+       
         
         
         
@@ -61,6 +61,7 @@ class SecondViewController: UIViewController {
             let button = UIButton()
             button.setTitle(exerciseArray[index].name, for: .normal)
             button.backgroundColor = UIColor.blue
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
         }
         //scrollView.contentSize.height = CGFloat(45*2)
@@ -69,5 +70,11 @@ class SecondViewController: UIViewController {
         
     }
     
+    @objc func buttonAction(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        var name = btnsendtag.titleLabel?.text
+        print(name)
+    }
+   
 }
 
