@@ -22,6 +22,8 @@ struct Exercise {
 
 class SecondViewController: UIViewController {
 
+    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     var exerciseArray = [Exercise]()
@@ -29,6 +31,23 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        self.scrollView.addSubview(stackView)
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
+        self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
+        self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
+        self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+        
+        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        
+        
+        
+        
+        
+        
         
         let exercise1 = Exercise(name: "pushup", image: nil, description: "push up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: 2)
         
@@ -41,9 +60,10 @@ class SecondViewController: UIViewController {
             print("hi")
             let button = UIButton.init(frame: CGRect.zero)
             button.setTitle(exerciseArray[index].name, for: .normal)
+            button.backgroundColor = UIColor.blue
             scrollView.addSubview(button)
         }
-        scrollView.contentSize.height = CGFloat(45*2)
+        //scrollView.contentSize.height = CGFloat(45*2)
         
         
         

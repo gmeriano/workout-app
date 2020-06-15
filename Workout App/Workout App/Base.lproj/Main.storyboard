@@ -55,28 +55,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-J9-YjY">
-                                <rect key="frame" x="-33" y="222" width="240" height="128"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="jYh-Tt-CZn"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="fLv-Zz-BcY"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bc-Tr-Xfu">
+                                <rect key="frame" x="99" y="347" width="212" height="144"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="i1m-Ph-jkO"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="688-L3-3nc"/>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="Gs5-me-kwD">
+                                <rect key="frame" x="152" y="348" width="46" height="720"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-5U-zlT">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uo-xa-X6m">
+                                        <rect key="frame" x="0.0" y="230" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqV-e5-oAL">
+                                        <rect key="frame" x="0.0" y="460" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aec-jd-zla">
+                                        <rect key="frame" x="0.0" y="690" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="1Lm-J9-YjY" secondAttribute="trailing" id="EKY-NY-yAJ"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="1Lm-J9-YjY" secondAttribute="trailing" id="kj6-76-1FK"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="1Lm-J9-YjY" secondAttribute="bottom" id="lLJ-Oa-yv7"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="1Lm-jQ-NIK"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="BLv-aa-E3Q"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2bc-Tr-Xfu" secondAttribute="trailing" id="FG1-E6-DES"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2bc-Tr-Xfu" secondAttribute="trailing" id="Ge4-yX-cgu"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="2bc-Tr-Xfu" secondAttribute="bottom" id="OUp-VJ-ivG"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="2bc-Tr-Xfu" secondAttribute="bottom" id="RAy-qR-k0f"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="emd-W1-TJa"/>
+                            <constraint firstItem="2bc-Tr-Xfu" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="rJW-I2-DjV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercise" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="scrollView" destination="1Lm-J9-YjY" id="PuL-dn-1Yd"/>
+                        <outlet property="scrollView" destination="2bc-Tr-Xfu" id="wiq-Ga-vC5"/>
+                        <outlet property="stackView" destination="Gs5-me-kwD" id="8Jl-BS-xAH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
