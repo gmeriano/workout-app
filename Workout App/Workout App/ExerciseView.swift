@@ -18,6 +18,8 @@ class ExerciseView: UIView {
     }
     */
     
+    var exercise :Exercise?
+    
     
 
 }

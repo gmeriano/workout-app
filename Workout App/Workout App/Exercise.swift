@@ -11,6 +11,13 @@ import UIKit
 
 class Exercise {
 
-    
+    var name :String?
+    var image :UIImage?
+    var description :String?
+    var video :URL?
+    var equipment :[String]?
+    var muscleGroups :[String]?
+    var alternativeExercises :[String]?
+    var intensity :Int?
     
 }
