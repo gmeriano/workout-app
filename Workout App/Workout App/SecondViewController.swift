@@ -26,6 +26,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    
     var exerciseArray = [Exercise]()
     
     override func viewDidLoad() {
@@ -62,7 +63,9 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func addExercise(_ sender: Any) {
+        print("plus button pressed")
         
+        self.performSegue(withIdentifier: "AddExerciseSegue", sender: self)
     }
     
     @objc func buttonAction(sender: UIButton!) {

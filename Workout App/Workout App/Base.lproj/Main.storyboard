@@ -93,11 +93,38 @@
                     <connections>
                         <outlet property="scrollView" destination="2bc-Tr-Xfu" id="wiq-Ga-vC5"/>
                         <outlet property="stackView" destination="Gs5-me-kwD" id="8Jl-BS-xAH"/>
+                        <segue destination="XSF-i8-Nxj" kind="show" identifier="AddExerciseSegue" id="nMw-9F-OHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
+        </scene>
+        <!--Add Exercise Scene-->
+        <scene sceneID="Yy1-Lh-gTT">
+            <objects>
+                <viewController title="Add Exercise Scene" id="XSF-i8-Nxj" customClass="AddExerciseViewController" customModule="Workout_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ocq-NO-PAz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9u-g9-SHE">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goBack:" destination="XSF-i8-Nxj" eventType="touchUpInside" id="1Yh-uf-xKI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Usi-zS-CoQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HkV-en-bxJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjK-jY-UKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573" y="360"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
