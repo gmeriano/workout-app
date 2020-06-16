@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
-        <!--Add Exercise Scene-->
+        <!--Add Exercise-->
         <scene sceneID="Yy1-Lh-gTT">
             <objects>
-                <viewController title="Add Exercise Scene" id="XSF-i8-Nxj" customClass="AddExerciseViewController" customModule="Workout_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Exercise" id="XSF-i8-Nxj" customClass="AddExerciseViewController" customModule="Workout_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ocq-NO-PAz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="1573" y="360"/>
         </scene>
-        <!--ExerciseViewController-->
+        <!--View Exercise-->
         <scene sceneID="REG-2R-KJH">
             <objects>
-                <viewController title="ExerciseViewController" id="1PB-hX-8m3" customClass="ExerciseViewController" customModule="Workout_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Exercise" id="1PB-hX-8m3" customClass="ExerciseViewController" customModule="Workout_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hbq-xu-ceI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
