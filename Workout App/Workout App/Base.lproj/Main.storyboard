@@ -109,19 +109,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9u-g9-SHE">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="goBack:" destination="XSF-i8-Nxj" eventType="touchUpInside" id="1Yh-uf-xKI"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="cIG-k9-vNT">
+                                <rect key="frame" x="10" y="94" width="394" height="620"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Exercise Details Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-9t-vs9">
+                                        <rect key="frame" x="90" y="0.0" width="214.5" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9P-C8-eor">
+                                        <rect key="frame" x="0.0" y="63" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SxP-Ny-UU6">
+                                        <rect key="frame" x="0.0" y="126" width="394" height="52.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uvU-Mp-4C5">
+                                        <rect key="frame" x="0.0" y="189.5" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gl6-xs-1DG">
+                                        <rect key="frame" x="0.0" y="252.5" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Equipment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyd-Rr-opX">
+                                        <rect key="frame" x="0.0" y="315.5" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Muscle Group(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oS-1D-ux4">
+                                        <rect key="frame" x="0.0" y="378.5" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alternative Exercises" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VpL-tJ-fAb">
+                                        <rect key="frame" x="0.0" y="441.5" width="394" height="52.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Intensity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNO-uV-f9H">
+                                        <rect key="frame" x="0.0" y="505" width="394" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9u-g9-SHE">
+                                        <rect key="frame" x="172.5" y="568" width="49" height="52"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="XSF-i8-Nxj" eventType="touchUpInside" id="1Yh-uf-xKI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SxP-Ny-UU6" firstAttribute="top" secondItem="U9P-C8-eor" secondAttribute="bottom" id="4Dh-oB-XId"/>
+                                    <constraint firstAttribute="trailing" secondItem="SxP-Ny-UU6" secondAttribute="trailing" id="74V-hS-MHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="U9P-C8-eor" secondAttribute="trailing" id="B1z-ba-fOH"/>
+                                    <constraint firstItem="5oS-1D-ux4" firstAttribute="width" secondItem="uvU-Mp-4C5" secondAttribute="width" id="EEP-Ir-y2t"/>
+                                    <constraint firstItem="SxP-Ny-UU6" firstAttribute="leading" secondItem="cIG-k9-vNT" secondAttribute="leading" id="XM3-5j-PNp"/>
+                                    <constraint firstItem="Gl6-xs-1DG" firstAttribute="width" secondItem="uvU-Mp-4C5" secondAttribute="width" id="dW0-UY-BBm"/>
+                                    <constraint firstAttribute="trailing" secondItem="uvU-Mp-4C5" secondAttribute="trailing" id="iWK-Ko-hFf"/>
+                                    <constraint firstItem="uvU-Mp-4C5" firstAttribute="leading" secondItem="cIG-k9-vNT" secondAttribute="leading" id="lzj-Ap-7uw"/>
+                                    <constraint firstItem="ZNO-uV-f9H" firstAttribute="width" secondItem="uvU-Mp-4C5" secondAttribute="width" id="oGe-XP-Bbh"/>
+                                    <constraint firstItem="fyd-Rr-opX" firstAttribute="width" secondItem="uvU-Mp-4C5" secondAttribute="width" id="p0K-nQ-QW5"/>
+                                    <constraint firstItem="U9P-C8-eor" firstAttribute="leading" secondItem="cIG-k9-vNT" secondAttribute="leading" id="ptE-4y-Kuv"/>
+                                    <constraint firstItem="VpL-tJ-fAb" firstAttribute="width" secondItem="uvU-Mp-4C5" secondAttribute="width" id="yK0-bc-Bcg"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cIG-k9-vNT" firstAttribute="leading" secondItem="Usi-zS-CoQ" secondAttribute="leading" constant="10" id="8Jx-WO-hwV"/>
+                            <constraint firstItem="Usi-zS-CoQ" firstAttribute="trailing" secondItem="cIG-k9-vNT" secondAttribute="trailing" constant="10" id="BrS-uj-3ZS"/>
+                            <constraint firstItem="Usi-zS-CoQ" firstAttribute="bottom" secondItem="cIG-k9-vNT" secondAttribute="bottom" constant="50" id="GeG-NN-BSH"/>
+                            <constraint firstItem="Usi-zS-CoQ" firstAttribute="trailing" secondItem="cIG-k9-vNT" secondAttribute="trailing" id="Zjl-uP-Czm"/>
+                            <constraint firstItem="cIG-k9-vNT" firstAttribute="top" secondItem="Usi-zS-CoQ" secondAttribute="top" constant="50" id="kcT-5Y-VRY"/>
+                            <constraint firstItem="cIG-k9-vNT" firstAttribute="leading" secondItem="Usi-zS-CoQ" secondAttribute="leading" id="u4N-Qb-3VQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Usi-zS-CoQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="HkV-en-bxJ"/>
+                    <connections>
+                        <outlet property="alternativeExercisesField" destination="VpL-tJ-fAb" id="uM5-TC-sYf"/>
+                        <outlet property="descriptionField" destination="uvU-Mp-4C5" id="wPZ-4o-ffv"/>
+                        <outlet property="equipmentField" destination="fyd-Rr-opX" id="i2Y-lb-kIs"/>
+                        <outlet property="imageField" destination="SxP-Ny-UU6" id="InX-aL-8WC"/>
+                        <outlet property="intensityField" destination="ZNO-uV-f9H" id="fRV-Ps-nzo"/>
+                        <outlet property="muscleGroupField" destination="5oS-1D-ux4" id="XYS-2d-Ngu"/>
+                        <outlet property="nameField" destination="U9P-C8-eor" id="hSQ-9P-MIA"/>
+                        <outlet property="videoField" destination="Gl6-xs-1DG" id="yN9-VR-92f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjK-jY-UKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

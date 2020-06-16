@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct Exercise {
     var name :String?
@@ -33,6 +34,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        FirebaseApp.configure()
         
         self.scrollView.addSubview(stackView)
         self.stackView.translatesAutoresizingMaskIntoConstraints = false
