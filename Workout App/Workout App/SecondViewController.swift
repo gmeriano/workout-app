@@ -76,9 +76,6 @@ class SecondViewController: UIViewController {
                 print(ex.intensity)
             }
         }
-        
-        self.performSegue(withIdentifier: "GoToExercise", sender: self)
-        
     }
    
 }
