@@ -30,12 +30,12 @@ class SecondViewController: UIViewController {
     
     var exerciseArray = [Exercise]()
     
+    var userId:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        FirebaseApp.configure()
-        
+                
         self.scrollView.addSubview(stackView)
         self.stackView.translatesAutoresizingMaskIntoConstraints = false
         
