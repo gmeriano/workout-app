@@ -28,6 +28,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    
     var exerciseArray = [Exercise]()
     
     override func viewDidLoad() {
@@ -35,6 +38,9 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         FirebaseApp.configure()
+        
+        
+        
         
         self.scrollView.addSubview(stackView)
         self.stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +68,27 @@ class SecondViewController: UIViewController {
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
         }
+        
+        // set firebase reference
+        ref = Database.database().reference()
+                
+        // retrieve posts and listen for changes
+        databaseHandle = ref?.child("Exercises").observe(.childAdded, with: { (DataSnapshot) in
+            
+            // Code to execute when child added under "Exercises"
+            let exer = DataSnapshot.value! as? Exercise
+            print(DataSnapshot.value)
+            
+            if let actualExercise = exer {
+                self.exerciseArray.append(actualExercise)
+                print("added exerciseee")
+            }
+            
+            self.stackView.reloadInputViews()
+        })
+        
+        
+        
     }
     
     @IBAction func addExercise(_ sender: Any) {
@@ -80,5 +107,6 @@ class SecondViewController: UIViewController {
         }
     }
    
+    
 }
 
