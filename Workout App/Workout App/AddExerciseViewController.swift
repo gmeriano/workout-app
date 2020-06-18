@@ -29,11 +29,16 @@ class AddExerciseViewController: UIViewController {
     
     @IBOutlet weak var intensityField: UITextField!
     
+    // current id of user
+    var userId:String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // get reference to database
         ref = Database.database().reference()
         
     }
@@ -44,8 +49,7 @@ class AddExerciseViewController: UIViewController {
         // generate id for this exercise
         let id = ref?.childByAutoId()
         
-        // send data to firebase
-        
+        // build NSDictionary of data to send to firebase
         let dict: NSDictionary = [
             "Name": nameField.text!,
             "ImageURL": imageField.text!,
@@ -57,34 +61,12 @@ class AddExerciseViewController: UIViewController {
             "Intensity": intensityField.text!
         ]
         
-        self.ref!.child("Exercises").child(id!.key!).setValue(dict)
-        
-        /*
-        self.ref!.child("Exercises").child(id!.key!).child("Name").setValue(nameField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("ImageURL").setValue(imageField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("Description").setValue(descriptionField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("VideoURL").setValue(videoField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("Equipment").setValue(equipmentField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("MuscleGroups").setValue(muscleGroupField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("AlternativeExercises").setValue(alternativeExercisesField.text!)
-        self.ref!.child("Exercises").child(id!.key!).child("Intensity").setValue(intensityField.text!)
-        */
+        // send data to firebase at correct location so it only adds exercise to current user
+        self.ref!.child(userId).child("Exercises").child(id!.key!).setValue(dict)
         
         // go back to previous screen
         presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
