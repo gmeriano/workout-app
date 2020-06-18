@@ -307,7 +307,7 @@
                                         <rect key="frame" x="192" y="299.5" width="30" height="30"/>
                                         <state key="normal" title="Dan"/>
                                         <connections>
-                                            <action selector="devTestingLogin:" destination="8a5-5l-WRz" eventType="touchUpInside" id="Uzy-Mg-RCV"/>
+                                            <action selector="devTestingLoginDan:" destination="8a5-5l-WRz" eventType="touchUpInside" id="Mad-2N-ydS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fU-Hv-zCo">
