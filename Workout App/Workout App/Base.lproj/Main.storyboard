@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-FJ-FYz">
-                                <rect key="frame" x="0.0" y="313.5" width="414" height="269.5"/>
+                                <rect key="frame" x="0.0" y="253.5" width="414" height="389.5"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oLQ-tF-Pic">
                                         <rect key="frame" x="136.5" y="0.0" width="141" height="32"/>
@@ -303,6 +303,20 @@
                                             <action selector="signInButtonTapped:" destination="8a5-5l-WRz" eventType="touchUpInside" id="6Va-oD-MVR"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uL5-m5-0x1">
+                                        <rect key="frame" x="192" y="299.5" width="30" height="30"/>
+                                        <state key="normal" title="Dan"/>
+                                        <connections>
+                                            <action selector="devTestingLogin:" destination="8a5-5l-WRz" eventType="touchUpInside" id="Uzy-Mg-RCV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fU-Hv-zCo">
+                                        <rect key="frame" x="188.5" y="359.5" width="37" height="30"/>
+                                        <state key="normal" title="Gabe"/>
+                                        <connections>
+                                            <action selector="devTestingLoginGabe:" destination="8a5-5l-WRz" eventType="touchUpInside" id="BPt-Qi-CUM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="O69-aQ-zIt" firstAttribute="leading" secondItem="QQT-FJ-FYz" secondAttribute="leading" constant="15" id="Is4-PN-1hv"/>
@@ -331,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6w-yX-Uk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="2"/>
+            <point key="canvasLocation" x="-855.07246376811599" y="1.3392857142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

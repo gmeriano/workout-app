@@ -138,4 +138,49 @@ class SignInViewController: UIViewController {
         
     }
     
+    
+    @IBAction func devTestingLoginDan(_ sender: Any) {
+        
+        Auth.auth().signIn(withEmail: "dpm7@rice.edu", password: "password") { [weak self] authResult, error in
+                                
+            // check that user isn't nil
+            if let user = authResult?.user {
+                
+                // set user id
+                self?.userId = user.uid
+                
+                // go to home screen
+                self?.performSegue(withIdentifier: "goToHome", sender: self)
+            }
+            else {
+                print("Error at sign in")
+                
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func devTestingLoginGabe(_ sender: Any) {
+        
+        Auth.auth().signIn(withEmail: "gvmeriano@gmail.com", password: "testing") { [weak self] authResult, error in
+                                
+            // check that user isn't nil
+            if let user = authResult?.user {
+                
+                // set user id
+                self?.userId = user.uid
+                
+                // go to home screen
+                self?.performSegue(withIdentifier: "goToHome", sender: self)
+            }
+            else {
+                print("Error at sign in")
+                
+            }
+        }
+        
+    }
+    
+    
 }

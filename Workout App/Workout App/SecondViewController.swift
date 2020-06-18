@@ -37,6 +37,9 @@ class SecondViewController: UIViewController {
     // information for exercise display
     var exInfo = ""
     
+    // index of clicked exercise
+    var exIdx = 0
+    
     // id of current user
     var userId:String = ""
     
@@ -121,11 +124,14 @@ class SecondViewController: UIViewController {
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
         let name = btnsendtag.titleLabel?.text
+        var idx = 0
         for ex in exerciseArray {
             if ex.name == name {
                 exInfo = ex.description!
+                exIdx = idx
                 self.performSegue(withIdentifier: "GoToExercise", sender: self)
             }
+            idx += 1
         }
     }
    
@@ -142,6 +148,7 @@ class SecondViewController: UIViewController {
             
             let vc = segue.destination as? ExerciseViewController
             vc?.information = self.exInfo
+            vc?.exercise = self.exerciseArray[exIdx]
         }
         
         

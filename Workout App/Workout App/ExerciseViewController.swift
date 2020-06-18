@@ -13,11 +13,12 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var info: UILabel!
     
     var information = ""
+    var exercise:Exercise?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        info.text = information
+        info.text = exercise!.description
 
         // Do any additional setup after loading the view.
         
