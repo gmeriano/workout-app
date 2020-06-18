@@ -57,15 +57,6 @@ class SecondViewController: UIViewController {
         exerciseArray.append(exercise1)
         exerciseArray.append(exercise2)
         
-        for index in 0...exerciseArray.count-1 {
-            print("hi")
-            let button = UIButton()
-            button.setTitle(exerciseArray[index].name, for: .normal)
-            button.backgroundColor = UIColor.blue
-            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            self.stackView.addArrangedSubview(button)
-        }
-        
         // set firebase reference
         ref = Database.database().reference()
         
@@ -93,9 +84,23 @@ class SecondViewController: UIViewController {
             print("Added exercise")
             print(actualExercise.name)
             
+            let button = UIButton()
+            button.setTitle(name, for: .normal)
+            button.backgroundColor = UIColor.blue
+            button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
+            self.stackView.addArrangedSubview(button)
+            
             self.stackView.reloadInputViews()
         })
         
+        for index in 0...exerciseArray.count-1 {
+            print("hi")
+            let button = UIButton()
+            button.setTitle(exerciseArray[index].name, for: .normal)
+            button.backgroundColor = UIColor.blue
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            self.stackView.addArrangedSubview(button)
+        }
         
         
     }
