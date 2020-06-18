@@ -34,6 +34,9 @@ class SecondViewController: UIViewController {
     // array holding all exercises for current user
     var exerciseArray = [Exercise]()
     
+    // information for exercise display
+    var exInfo = ""
+    
     // id of current user
     var userId:String = ""
     
@@ -120,7 +123,8 @@ class SecondViewController: UIViewController {
         let name = btnsendtag.titleLabel?.text
         for ex in exerciseArray {
             if ex.name == name {
-                print(ex.intensity)
+                exInfo = ex.description!
+                self.performSegue(withIdentifier: "GoToExercise", sender: self)
             }
         }
     }
@@ -133,6 +137,14 @@ class SecondViewController: UIViewController {
             let vc = segue.destination as? AddExerciseViewController
             vc?.userId = self.userId
         }
+        
+        if segue.destination is ExerciseViewController {
+            
+            let vc = segue.destination as? ExerciseViewController
+            vc?.information = self.exInfo
+        }
+        
+        
         
     }
 }

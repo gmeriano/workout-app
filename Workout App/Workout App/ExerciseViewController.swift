@@ -10,8 +10,14 @@ import UIKit
 
 class ExerciseViewController: UIViewController {
 
+    @IBOutlet weak var info: UILabel!
+    
+    var information = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        info.text = information
 
         // Do any additional setup after loading the view.
     }
