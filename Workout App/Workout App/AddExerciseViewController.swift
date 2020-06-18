@@ -45,6 +45,21 @@ class AddExerciseViewController: UIViewController {
         let id = ref?.childByAutoId()
         
         // send data to firebase
+        
+        let dict: NSDictionary = [
+            "Name": nameField.text!,
+            "ImageURL": imageField.text!,
+            "Description": descriptionField.text!,
+            "VideoURL": videoField.text!,
+            "Equipment": equipmentField.text!,
+            "MuscleGroups": muscleGroupField.text!,
+            "AlternativeExercises": alternativeExercisesField.text!,
+            "Intensity": intensityField.text!
+        ]
+        
+        self.ref!.child("Exercises").child(id!.key!).setValue(dict)
+        
+        /*
         self.ref!.child("Exercises").child(id!.key!).child("Name").setValue(nameField.text!)
         self.ref!.child("Exercises").child(id!.key!).child("ImageURL").setValue(imageField.text!)
         self.ref!.child("Exercises").child(id!.key!).child("Description").setValue(descriptionField.text!)
@@ -53,6 +68,7 @@ class AddExerciseViewController: UIViewController {
         self.ref!.child("Exercises").child(id!.key!).child("MuscleGroups").setValue(muscleGroupField.text!)
         self.ref!.child("Exercises").child(id!.key!).child("AlternativeExercises").setValue(alternativeExercisesField.text!)
         self.ref!.child("Exercises").child(id!.key!).child("Intensity").setValue(intensityField.text!)
+        */
         
         // go back to previous screen
         presentingViewController?.dismiss(animated: true, completion: nil)

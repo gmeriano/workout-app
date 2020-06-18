@@ -11,13 +11,13 @@ import Firebase
 
 struct Exercise {
     var name :String?
-    var image :UIImage?
+    var image :String? //UImage
     var description :String?
-    var video :URL?
-    var equipment :[String]?
-    var muscleGroups :[String]?
-    var alternativeExercises :[String]?
-    var intensity :Int?
+    var video :String? //URL
+    var equipment :String? // array of strings
+    var muscleGroups :String? // array of strings
+    var alternativeExercises :String? // array of strings
+    var intensity :String? // int
 }
 
 
@@ -50,9 +50,9 @@ class SecondViewController: UIViewController {
         self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         
-        let exercise1 = Exercise(name: "pushup", image: nil, description: "push up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: 2)
+        let exercise1 = Exercise(name: "pushup", image: nil, description: "push up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: "2")
         
-        let exercise2 = Exercise(name: "situp", image: nil, description: "sit up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: 1)
+        let exercise2 = Exercise(name: "situp", image: nil, description: "sit up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: "1")
         
         exerciseArray.append(exercise1)
         exerciseArray.append(exercise2)
@@ -68,18 +68,30 @@ class SecondViewController: UIViewController {
         
         // set firebase reference
         ref = Database.database().reference()
-                
+        
         // retrieve posts and listen for changes
         databaseHandle = ref?.child("Exercises").observe(.childAdded, with: { (DataSnapshot) in
             
-            // Code to execute when child added under "Exercises"
-            let exer = DataSnapshot.value! as? Exercise
-            print(DataSnapshot.value)
+            let exer = DataSnapshot.value as! NSDictionary
+            let vals = exer.allValues
             
-            if let actualExercise = exer {
-                self.exerciseArray.append(actualExercise)
-                print("added exerciseee")
-            }
+            
+            // there might be a better way to do this
+            // gets the values for each cooresponding key saved to variable
+            let muscleGroups:String = vals[0] as! String
+            let equipment:String = vals[1] as! String
+            let image:String = vals[2] as! String
+            let altExer:String = vals[3] as! String
+            let video:String = vals[4] as! String
+            let name:String = vals[5] as! String
+            let desc:String = vals[6] as! String
+            let intensity:String = vals[7] as! String
+        
+            let actualExercise = Exercise(name: name, image: image, description: desc, video: video, equipment: equipment, muscleGroups: muscleGroups, alternativeExercises: altExer, intensity: intensity)
+            
+            self.exerciseArray.append(actualExercise)
+            print("Added exercise")
+            print(actualExercise.name)
             
             self.stackView.reloadInputViews()
         })
