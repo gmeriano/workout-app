@@ -18,6 +18,7 @@ struct Exercise {
     var muscleGroups :String? // array of strings
     var alternativeExercises :String? // array of strings
     var intensity :String? // int
+    var key :String? // key of exercise in database
 }
 
 
@@ -56,14 +57,12 @@ class SecondViewController: UIViewController {
         self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
         self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
-        // example exercises everyone starts with
-        let exercise1 = Exercise(name: "pushup", image: nil, description: "push up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: "2")
-        let exercise2 = Exercise(name: "situp", image: nil, description: "sit up", video: nil, equipment: nil, muscleGroups: nil, alternativeExercises: nil, intensity: "1")
-        exerciseArray.append(exercise1)
-        exerciseArray.append(exercise2)
-        
         // set firebase reference
         ref = Database.database().reference()
+        
+        let sampleExercise = Exercise(name: "pushup", image: "none", description: "push yourself up", video: "none", equipment: "body", muscleGroups: "chest", alternativeExercises: "bench press", intensity: "2", key: "none")
+        
+        exerciseArray.append(sampleExercise)
         
         // retrieve posts and listen for changes in database for given user
         databaseHandle = ref?.child(self.userId).child("Exercises").observe(.childAdded, with: { (DataSnapshot) in
@@ -84,9 +83,10 @@ class SecondViewController: UIViewController {
             let name:String = vals[5] as! String
             let desc:String = vals[6] as! String
             let intensity:String = vals[7] as! String
+            let exKey:String = DataSnapshot.key
         
             // build exercise struct
-            let actualExercise = Exercise(name: name, image: image, description: desc, video: video, equipment: equipment, muscleGroups: muscleGroups, alternativeExercises: altExer, intensity: intensity)
+            let actualExercise = Exercise(name: name, image: image, description: desc, video: video, equipment: equipment, muscleGroups: muscleGroups, alternativeExercises: altExer, intensity: intensity, key: exKey)
             
             // add Exercise to array
             self.exerciseArray.append(actualExercise)
@@ -147,7 +147,6 @@ class SecondViewController: UIViewController {
         if segue.destination is ExerciseViewController {
             
             let vc = segue.destination as? ExerciseViewController
-            vc?.information = self.exInfo
             vc?.exercise = self.exerciseArray[exIdx]
         }
         

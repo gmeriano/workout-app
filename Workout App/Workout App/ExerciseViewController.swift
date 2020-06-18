@@ -9,16 +9,37 @@
 import UIKit
 
 class ExerciseViewController: UIViewController {
-
-    @IBOutlet weak var info: UILabel!
     
-    var information = ""
     var exercise:Exercise?
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var imageLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var videoLabel: UILabel!
+    
+    @IBOutlet weak var equipmentLabel: UILabel!
+    
+    @IBOutlet weak var muscleGroupLabel: UILabel!
+    
+    @IBOutlet weak var altExerciseLabel: UILabel!
+    
+    @IBOutlet weak var intensityLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        info.text = exercise!.description
+        nameLabel.text = exercise!.name
+        imageLabel.text = exercise!.image
+        descriptionLabel.text = exercise!.description
+        videoLabel.text = exercise!.video
+        equipmentLabel.text = exercise!.equipment
+        muscleGroupLabel.text = exercise!.muscleGroups
+        altExerciseLabel.text = exercise!.alternativeExercises
+        intensityLabel.text = exercise!.intensity
 
         // Do any additional setup after loading the view.
         
@@ -31,15 +52,30 @@ class ExerciseViewController: UIViewController {
             presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
+
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func editExercise(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "EditExercise", sender: self)
+        
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.destination is AddExerciseViewController {
+            
+            let vc = segue.destination as? AddExerciseViewController
+            vc?.editExercise = true
+            vc!.nameField.text = exercise!.name
+            vc?.imageField.text = exercise!.image
+            vc?.descriptionField.text = exercise!.description
+            vc?.videoField.text = exercise!.video
+            vc?.equipmentField.text = exercise!.equipment
+            vc?.muscleGroupField.text = exercise!.muscleGroups
+            vc?.alternativeExercisesField.text = exercise!.alternativeExercises
+            vc?.intensityField.text = exercise!.intensity
+            
+        }
+    }
+    
 }

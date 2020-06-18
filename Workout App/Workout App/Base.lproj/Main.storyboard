@@ -217,25 +217,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V23-RZ-zoK">
-                                <rect key="frame" x="113" y="304" width="205" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="07z-v1-DKU">
+                                <rect key="frame" x="127.5" y="259" width="159" height="378"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-rX-kHD">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzo-Dk-CSG">
+                                        <rect key="frame" x="0.0" y="43.5" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNG-oC-T90">
+                                        <rect key="frame" x="0.0" y="87" width="88" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V23-RZ-zoK">
+                                        <rect key="frame" x="0.0" y="130.5" width="44" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1h-Zi-9nC">
+                                        <rect key="frame" x="0.0" y="174" width="82.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muscle Group(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ai-YL-h9k">
+                                        <rect key="frame" x="0.0" y="217.5" width="127.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternative Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-AU-rbe">
+                                        <rect key="frame" x="0.0" y="261" width="159" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldT-Q4-e1w">
+                                        <rect key="frame" x="0.0" y="304.5" width="65.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoR-Ln-MJM">
+                                        <rect key="frame" x="0.0" y="348" width="88" height="30"/>
+                                        <state key="normal" title="Edit Exercise"/>
+                                        <connections>
+                                            <action selector="editExercise:" destination="1PB-hX-8m3" eventType="touchUpInside" id="Cet-ST-QfG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="07z-v1-DKU" firstAttribute="centerY" secondItem="hbq-xu-ceI" secondAttribute="centerY" id="6Cd-O0-CRE"/>
+                            <constraint firstItem="07z-v1-DKU" firstAttribute="centerX" secondItem="hbq-xu-ceI" secondAttribute="centerX" id="A7r-zy-ggw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XRY-fQ-AhE"/>
                     </view>
                     <navigationItem key="navigationItem" id="r0r-sn-seu"/>
                     <connections>
-                        <outlet property="info" destination="V23-RZ-zoK" id="Cay-NR-gxB"/>
+                        <outlet property="altExerciseLabel" destination="kJ1-AU-rbe" id="Dpy-Lv-EPK"/>
+                        <outlet property="descriptionLabel" destination="tNG-oC-T90" id="UpH-UL-VZw"/>
+                        <outlet property="equipmentLabel" destination="H1h-Zi-9nC" id="D0o-hM-AwI"/>
+                        <outlet property="imageLabel" destination="Bzo-Dk-CSG" id="BUl-Gh-3ff"/>
+                        <outlet property="intensityLabel" destination="ldT-Q4-e1w" id="JHO-7X-5NI"/>
+                        <outlet property="muscleGroupLabel" destination="0Ai-YL-h9k" id="jMt-Xi-61d"/>
+                        <outlet property="nameLabel" destination="ZHn-rX-kHD" id="yYt-XG-7Qn"/>
+                        <outlet property="videoLabel" destination="V23-RZ-zoK" id="qKY-Z5-GlZ"/>
+                        <segue destination="XSF-i8-Nxj" kind="show" identifier="EditExercise" id="mXi-KD-XkA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONV-JP-Fcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1571.0144927536232" y="1037.2767857142858"/>
+            <point key="canvasLocation" x="1252" y="1123"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="DTm-0a-8js">
@@ -367,6 +432,9 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mXi-KD-XkA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="plus" catalog="system" width="128" height="113"/>
