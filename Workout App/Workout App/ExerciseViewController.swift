@@ -20,9 +20,17 @@ class ExerciseViewController: UIViewController {
         info.text = information
 
         // Do any additional setup after loading the view.
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        view.addGestureRecognizer(downSwipe)
     }
     
-
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
