@@ -53,27 +53,37 @@ class ExerciseViewController: UIViewController {
         }
     }
 
-    
+    // goes to add exercise view controller following prepare function
     @IBAction func editExercise(_ sender: Any) {
-        
         self.performSegue(withIdentifier: "EditExercise", sender: self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         if segue.destination is AddExerciseViewController {
             
+            let tabView = presentingViewController as! UITabBarController
+            let secondView = tabView.customizableViewControllers![1] as! SecondViewController
+            
             let vc = segue.destination as? AddExerciseViewController
+            
+            // get user id from secondViewController
+            vc?.userId = secondView.userId
+            
+            // let AddExerciseViewController know that it is editing rather than adding an exercise
             vc?.editExercise = true
-            vc!.nameField.text = exercise!.name
-            vc?.imageField.text = exercise!.image
-            vc?.descriptionField.text = exercise!.description
-            vc?.videoField.text = exercise!.video
-            vc?.equipmentField.text = exercise!.equipment
-            vc?.muscleGroupField.text = exercise!.muscleGroups
-            vc?.alternativeExercisesField.text = exercise!.alternativeExercises
-            vc?.intensityField.text = exercise!.intensity
+            
+            // pass previous exercise data into AddExerciseViewController so that you don't have to
+            // retype old data that you don't want to change
+            vc?.exerciseId = exercise!.key
+            vc?.nameEdit = exercise!.name ?? ""
+            vc?.imageEdit = exercise!.image ?? ""
+            vc?.descEdit = exercise!.description ?? ""
+            vc?.videoEdit = exercise!.video ?? ""
+            vc?.equipEdit = exercise!.equipment ?? ""
+            vc?.muscleEdit = exercise!.muscleGroups ?? ""
+            vc?.altExEdit = exercise!.alternativeExercises ?? ""
+            vc?.intensityEdit = exercise!.intensity ?? ""
             
         }
     }

@@ -31,9 +31,11 @@ class SecondViewController: UIViewController {
     
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
+    var databaseUpdateHandle:DatabaseHandle?
     
     // array holding all exercises for current user
     var exerciseArray = [Exercise]()
+    var buttonArray = [UIButton]()
     
     // information for exercise display
     var exInfo = ""
@@ -60,11 +62,50 @@ class SecondViewController: UIViewController {
         // set firebase reference
         ref = Database.database().reference()
         
+        // exercise array needs at least 1 exercise at load
         let sampleExercise = Exercise(name: "pushup", image: "none", description: "push yourself up", video: "none", equipment: "body", muscleGroups: "chest", alternativeExercises: "bench press", intensity: "2", key: "none")
-        
         exerciseArray.append(sampleExercise)
         
-        // retrieve posts and listen for changes in database for given user
+        // retrieves posts and listens for updated exercises for given user
+        databaseUpdateHandle = ref?.child(self.userId).child("Exercises").observe(.childChanged, with: { (DataSnapshot) in
+        
+                // gets new data as NSDictionary
+                let exer = DataSnapshot.value as! NSDictionary
+                print("EDITING")
+                // stores values of relevant data as array
+                let vals = exer.allValues
+                
+                // there might be a better way to do this
+                // gets the values for each cooresponding key saved to variable
+                let muscleGroups:String = vals[0] as! String
+                let equipment:String = vals[1] as! String
+                let image:String = vals[2] as! String
+                let altExer:String = vals[3] as! String
+                let video:String = vals[4] as! String
+                let name:String = vals[5] as! String
+                print(name)
+                let desc:String = vals[6] as! String
+                let intensity:String = vals[7] as! String
+                let exKey:String = DataSnapshot.key
+            
+                // build exercise struct
+                let actualExercise = Exercise(name: name, image: image, description: desc, video: video, equipment: equipment, muscleGroups: muscleGroups, alternativeExercises: altExer, intensity: intensity, key: exKey)
+                
+                // add Exercise to array
+                var idx = 0
+                for index in 0...self.exerciseArray.count-1 {
+                    let currentKey = self.exerciseArray[index].key
+                    if currentKey == exKey {
+                        idx = index
+                        break
+                    }
+                }
+                self.exerciseArray.remove(at: idx)
+                self.exerciseArray.insert(actualExercise, at: idx)
+                self.buttonArray[idx].setTitle(name, for: .normal)
+        })
+        
+        // retrieve posts and listen for added exercises in database for given user
         databaseHandle = ref?.child(self.userId).child("Exercises").observe(.childAdded, with: { (DataSnapshot) in
             
             // gets new data as NSDictionary
@@ -97,26 +138,25 @@ class SecondViewController: UIViewController {
             button.backgroundColor = UIColor.blue
             button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
+            self.buttonArray.append(button)
             self.stackView.reloadInputViews()
         })
         
         // display exercises in database previously made by user
         for index in 0...exerciseArray.count-1 {
-            print("hi")
             let button = UIButton()
             button.setTitle(exerciseArray[index].name, for: .normal)
             button.backgroundColor = UIColor.blue
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
+            buttonArray.append(button)
         }
         
         
     }
     
     // goes to AddExerciseViewController to add an exercise to this view
-    @IBAction func addExercise(_ sender: Any) {
-        print("plus button pressed")
-        
+    @IBAction func addExercise(_ sender: Any) {        
         self.performSegue(withIdentifier: "AddExerciseSegue", sender: self)
     }
     

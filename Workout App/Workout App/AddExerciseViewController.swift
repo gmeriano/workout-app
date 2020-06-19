@@ -14,28 +14,28 @@ class AddExerciseViewController: UIViewController {
     var ref:DatabaseReference?
     
     @IBOutlet weak var nameField: UITextField!
-    let nameEdit:String = ""
+    var nameEdit:String = ""
     
     @IBOutlet weak var imageField: UITextField!
-    let imageEdit:String = ""
+    var imageEdit:String = ""
     
     @IBOutlet weak var descriptionField: UITextField!
-    let descEdit:String = ""
+    var descEdit:String = ""
     
     @IBOutlet weak var videoField: UITextField!
-    let videoEdit:String = ""
+    var videoEdit:String = ""
     
     @IBOutlet weak var equipmentField: UITextField!
-    let equipEdit:String = ""
+    var equipEdit:String = ""
     
     @IBOutlet weak var muscleGroupField: UITextField!
-    let muscleEdit:String = ""
+    var muscleEdit:String = ""
     
     @IBOutlet weak var alternativeExercisesField: UITextField!
-    let altExEdit:String = ""
+    var altExEdit:String = ""
     
     @IBOutlet weak var intensityField: UITextField!
-    let intensityEdit:String = ""
+    var intensityEdit:String = ""
     
     // current id of user
     var userId:String = ""
@@ -89,18 +89,24 @@ class AddExerciseViewController: UIViewController {
             "Intensity": intensityField.text!
         ]
         
-        // if you are editing, rather than adding an exercise
+        // if you are editing, rather than adding an exercise, use already set exerciseID
         if editExercise {
             self.ref!.child(userId).child("Exercises").child(exerciseId!).setValue(dict)
         }
         else {
-            // send data to firebase at correct location so it only adds exercise to current user
+            // send data to firebase for new exercise at correct location so it only adds
+            // exercise to current user
             self.ref!.child(userId).child("Exercises").child(id!.key!).setValue(dict)
         }
             
         // go back to previous screen
-        presentingViewController?.dismiss(animated: true, completion: nil)
-        
-    }
+        if let prevView = presentingViewController as? ExerciseViewController {
+            prevView.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+        else {
+            presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     
+    }
+
 }

@@ -89,6 +89,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercise" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="C17-MO-U7J"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="2bc-Tr-Xfu" id="wiq-Ga-vC5"/>
@@ -207,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjK-jY-UKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="360"/>
+            <point key="canvasLocation" x="2272" y="127"/>
         </scene>
         <!--View Exercise-->
         <scene sceneID="REG-2R-KJH">
@@ -433,7 +434,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mXi-KD-XkA"/>
+        <segue reference="nMw-9F-OHu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
