@@ -22,11 +22,12 @@ struct Exercise {
 }
 
 
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
@@ -35,6 +36,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // array holding all exercises for current user
     var exerciseArray = [Exercise]()
     var buttonArray = [UIButton]()
+    var searchExercise = [Exercise]()
+    
+    // is the user searching
+    var searching = false
     
     // information for exercise display
     var exInfo = ""
@@ -136,18 +141,40 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exerciseArray.count
+        if searching{
+           return searchExercise.count
+        } else {
+            return exerciseArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")
-        cell?.textLabel?.text = exerciseArray[indexPath.row].name
+        if searching {
+            cell?.textLabel?.text = searchExercise[indexPath.row].name
+        } else {
+            cell?.textLabel?.text = exerciseArray[indexPath.row].name
+        }
+        
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedIndex = indexPath.row
         performSegue(withIdentifier: "GoToExercise", sender: self)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //searchExercise = exerciseArray.filter({$0.name?.prefix(searchText.count) == searchText})
+        searchExercise = exerciseArray.filter({($0.name?.contains(searchText.lowercased()))!})
+        searching = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
     }
     
     // goes to AddExerciseViewController to add an exercise to this view
