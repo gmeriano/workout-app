@@ -22,12 +22,11 @@ struct Exercise {
 }
 
 
-class SecondViewController: UIViewController {
-
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var scrollView: UIScrollView!
     
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
@@ -50,14 +49,10 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
                 
-        // setup scrollview with embedded stackview for displaying exercises
-        self.scrollView.addSubview(stackView)
-        self.stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
-        self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
-        self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
-        self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        // setup tableView
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         
         // set firebase reference
         ref = Database.database().reference()
@@ -102,7 +97,7 @@ class SecondViewController: UIViewController {
                 }
                 self.exerciseArray.remove(at: idx)
                 self.exerciseArray.insert(actualExercise, at: idx)
-                self.buttonArray[idx].setTitle(name, for: .normal)
+                //self.buttonArray[idx].setTitle(name, for: .normal)
         })
         
         // retrieve posts and listen for added exercises in database for given user
@@ -133,26 +128,26 @@ class SecondViewController: UIViewController {
             self.exerciseArray.append(actualExercise)
             
             // display the new exercise in view
-            let button = UIButton()
-            button.setTitle(name, for: .normal)
-            button.backgroundColor = UIColor.blue
-            button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
-            self.stackView.addArrangedSubview(button)
-            self.buttonArray.append(button)
-            self.stackView.reloadInputViews()
+            self.tableView.reloadData()
         })
         
-        // display exercises in database previously made by user
-        for index in 0...exerciseArray.count-1 {
-            let button = UIButton()
-            button.setTitle(exerciseArray[index].name, for: .normal)
-            button.backgroundColor = UIColor.blue
-            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            self.stackView.addArrangedSubview(button)
-            buttonArray.append(button)
-        }
         
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return exerciseArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")
+        cell?.textLabel?.text = exerciseArray[indexPath.row].name
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedIndex = indexPath.row
+        performSegue(withIdentifier: "GoToExercise", sender: self)
     }
     
     // goes to AddExerciseViewController to add an exercise to this view
@@ -160,20 +155,6 @@ class SecondViewController: UIViewController {
         self.performSegue(withIdentifier: "AddExerciseSegue", sender: self)
     }
     
-    // Action called when an exercise is pressed
-    @objc func buttonAction(sender: UIButton!) {
-        let btnsendtag: UIButton = sender
-        let name = btnsendtag.titleLabel?.text
-        var idx = 0
-        for ex in exerciseArray {
-            if ex.name == name {
-                exInfo = ex.description!
-                exIdx = idx
-                self.performSegue(withIdentifier: "GoToExercise", sender: self)
-            }
-            idx += 1
-        }
-    }
    
     // Sends the userId to AddExerciseViewController whenever the user wants to add a new exercise
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -187,7 +168,8 @@ class SecondViewController: UIViewController {
         if segue.destination is ExerciseViewController {
             
             let vc = segue.destination as? ExerciseViewController
-            vc?.exercise = self.exerciseArray[exIdx]
+//            vc?.exercise = self.exerciseArray[exIdx]
+            vc?.exercise = exerciseArray[tableView.indexPathForSelectedRow!.row]
         }
         
         
