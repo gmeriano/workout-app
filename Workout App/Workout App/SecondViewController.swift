@@ -58,6 +58,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
+        // hide extra cells
+        tableView.tableFooterView = UIView()
+
+        
         
         // set firebase reference
         ref = Database.database().reference()
