@@ -107,6 +107,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.exerciseArray.remove(at: idx)
                 self.exerciseArray.insert(actualExercise, at: idx)
                 //self.buttonArray[idx].setTitle(name, for: .normal)
+            self.tableView.reloadData()
         })
         
         // retrieve posts and listen for added exercises in database for given user

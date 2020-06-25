@@ -7,6 +7,16 @@
 //
 
 import UIKit
+import Firebase
+
+struct Workout {
+    var exercises:[Exercise]
+    var repTimeIndicator:[Int]
+    var repOrTime:[Int]
+    var sets:[Int]
+    var weights:[Int]?
+    var rest:[Int]?
+}
 
 class FirstViewController: UIViewController {
 

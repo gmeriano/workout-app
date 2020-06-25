@@ -11,7 +11,6 @@
 		098842AB2498420500A5EBD2 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098842AA2498420500A5EBD2 /* ExerciseViewController.swift */; };
 		098842AD24997DF100A5EBD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098842AC24997DF100A5EBD2 /* GoogleService-Info.plist */; };
 		098842AF249AD36300A5EBD2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098842AE249AD36300A5EBD2 /* SignInViewController.swift */; };
-		09DEC4E7248718640038D358 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC4E6248718640038D358 /* Workout.swift */; };
 		1E19D9D0D407876387D64E98 /* Pods_Workout_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CE417B279CEF045B8FC8B4 /* Pods_Workout_AppTests.framework */; };
 		371476EDF1508E3F65B23E13 /* Pods_Workout_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4891CAE1B3BCF4691F71B941 /* Pods_Workout_App.framework */; };
 		7C8505489E636157AA0B0500 /* Pods_Workout_App_Workout_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FC2D847C92D6470A3E564 /* Pods_Workout_App_Workout_AppUITests.framework */; };
@@ -48,7 +47,6 @@
 		098842AA2498420500A5EBD2 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		098842AC24997DF100A5EBD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		098842AE249AD36300A5EBD2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		09DEC4E6248718640038D358 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		0D1031B94FA2DC8281D8842F /* Pods-Workout App-Workout AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout App-Workout AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Workout App-Workout AppUITests/Pods-Workout App-Workout AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3B4B41D294F69112F90C6EDB /* Pods-Workout App-Workout AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout App-Workout AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Workout App-Workout AppUITests/Pods-Workout App-Workout AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4891CAE1B3BCF4691F71B941 /* Pods_Workout_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +153,6 @@
 				FAA893AD248714AA002E0246 /* SceneDelegate.swift */,
 				FAA893AF248714AA002E0246 /* FirstViewController.swift */,
 				FAA893B1248714AA002E0246 /* SecondViewController.swift */,
-				09DEC4E6248718640038D358 /* Workout.swift */,
 				098842A824983F0200A5EBD2 /* AddExerciseViewController.swift */,
 				098842AE249AD36300A5EBD2 /* SignInViewController.swift */,
 				098842AA2498420500A5EBD2 /* ExerciseViewController.swift */,
@@ -430,7 +427,6 @@
 				FAA893B0248714AA002E0246 /* FirstViewController.swift in Sources */,
 				FAA893AC248714AA002E0246 /* AppDelegate.swift in Sources */,
 				098842A924983F0200A5EBD2 /* AddExerciseViewController.swift in Sources */,
-				09DEC4E7248718640038D358 /* Workout.swift in Sources */,
 				098842AF249AD36300A5EBD2 /* SignInViewController.swift in Sources */,
 				098842AB2498420500A5EBD2 /* ExerciseViewController.swift in Sources */,
 				FAA893AE248714AA002E0246 /* SceneDelegate.swift in Sources */,
