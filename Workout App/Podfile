@@ -10,6 +10,7 @@ target 'Workout App' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'iOSDropDown'
 
 
   target 'Workout AppTests' do
