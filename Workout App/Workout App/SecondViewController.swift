@@ -50,6 +50,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // id of current user
     var userId:String = ""
     
+    // name of exercise to be removed from the array
+    var remExercise = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -167,6 +170,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedIndex = indexPath.row
         performSegue(withIdentifier: "GoToExercise", sender: self)
+    }
+    
+    // slide to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+        self.exerciseArray.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+     }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
