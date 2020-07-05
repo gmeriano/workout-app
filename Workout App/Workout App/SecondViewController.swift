@@ -175,6 +175,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // slide to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
      if editingStyle == .delete {
+        self.ref!.child(userId).child("Exercises").child(exerciseArray[indexPath.row].key!).removeValue()
         self.exerciseArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
      }
