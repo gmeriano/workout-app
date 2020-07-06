@@ -1,5 +1,5 @@
 //
-//  AddExerciseToWorkoutViewController.swift
+//  createWorkoutViewController.swift
 //  Workout App
 //
 //  Created by Rita Meriano on 7/5/20.
@@ -7,25 +7,15 @@
 //
 
 import UIKit
-import iOSDropDown
 
-class AddExerciseToWorkoutViewController: UIViewController {
+class createWorkoutViewController: UIViewController {
 
-    
-    @IBOutlet weak var dropDownMenu: DropDown!
-
-    @IBOutlet weak var valueLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dropDownMenu.isSearchEnable = true
-        dropDownMenu.optionArray = ["Option1", "Option2", "Option3", "poo", "hehe"]
-        dropDownMenu.didSelect{(selectedText, index, id) in
-            print(self.dropDownMenu.selectedIndex)
-        }
-        
-    }
 
+        // Do any additional setup after loading the view.
+    }
+    
 
     /*
     // MARK: - Navigation

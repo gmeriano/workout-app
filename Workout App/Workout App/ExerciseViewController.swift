@@ -63,7 +63,7 @@ class ExerciseViewController: UIViewController {
         if segue.destination is AddExerciseViewController {
             
             let tabView = presentingViewController as! UITabBarController
-            let secondView = tabView.customizableViewControllers![1] as! SecondViewController
+            let secondView = tabView.customizableViewControllers![0] as! SecondViewController
             
             let vc = segue.destination as? AddExerciseViewController
             

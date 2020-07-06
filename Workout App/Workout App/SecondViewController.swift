@@ -54,9 +54,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var remExercise = ""
     
     override func viewDidLoad() {
+        print("howdy")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-                
+        print("1")
         // setup tableView
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,14 +66,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.tableFooterView = UIView()
 
         
-        
+        print("2")
         // set firebase reference
         ref = Database.database().reference()
         
         // exercise array needs at least 1 exercise at load
         let sampleExercise = Exercise(name: "pushup", image: "none", description: "push yourself up", video: "none", equipment: "body", muscleGroups: "chest", alternativeExercises: "bench press", intensity: "2", key: "none")
         exerciseArray.append(sampleExercise)
-        
+        print("3")
         // retrieves posts and listens for updated exercises for given user
         databaseUpdateHandle = ref?.child(self.userId).child("Exercises").observe(.childChanged, with: { (DataSnapshot) in
         
@@ -112,7 +113,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 //self.buttonArray[idx].setTitle(name, for: .normal)
             self.tableView.reloadData()
         })
-        
+        print("4")
         // retrieve posts and listen for added exercises in database for given user
         databaseHandle = ref?.child(self.userId).child("Exercises").observe(.childAdded, with: { (DataSnapshot) in
             
@@ -144,7 +145,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         })
         
-        
+        print("5")
         
     }
     
