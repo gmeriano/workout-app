@@ -16,10 +16,22 @@ class AddExerciseToWorkoutViewController: UIViewController {
 
     @IBOutlet weak var valueLabel: UILabel!
     
+    var exerciseArray = [Exercise]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tabView = presentingViewController?.presentingViewController as! UITabBarController
+        let secondView = tabView.customizableViewControllers![0] as! SecondViewController
+        exerciseArray = secondView.exerciseArray
+        
+        var exerciseNameArray = [String]()
+        for exercise in exerciseArray {
+            exerciseNameArray.append(exercise.name!)
+        }
+
+        
         dropDownMenu.isSearchEnable = true
-        dropDownMenu.optionArray = ["Option1", "Option2", "Option3", "poo", "hehe"]
+        dropDownMenu.optionArray = exerciseNameArray
         dropDownMenu.didSelect{(selectedText, index, id) in
             print(self.dropDownMenu.selectedIndex)
         }

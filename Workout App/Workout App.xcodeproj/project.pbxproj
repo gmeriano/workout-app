@@ -161,12 +161,12 @@
 				098842AE249AD36300A5EBD2 /* SignInViewController.swift */,
 				098842AA2498420500A5EBD2 /* ExerciseViewController.swift */,
 				098842B024B294DF00A5EBD2 /* AddExerciseToWorkoutViewController.swift */,
+				098842B224B2A6F500A5EBD2 /* createWorkoutViewController.swift */,
 				FAA893B3248714AA002E0246 /* Main.storyboard */,
 				FAA893B6248714B4002E0246 /* Assets.xcassets */,
 				FAA893B8248714B4002E0246 /* LaunchScreen.storyboard */,
 				FAA893BB248714B4002E0246 /* Info.plist */,
 				098842AC24997DF100A5EBD2 /* GoogleService-Info.plist */,
-				098842B224B2A6F500A5EBD2 /* createWorkoutViewController.swift */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
