@@ -78,6 +78,7 @@ class AddExerciseToWorkoutViewController: UIViewController {
         
         let createWorkoutView = presentingViewController as! createWorkoutViewController
         createWorkoutView.exercisePlusArray.append(exerciseToSend)
+        createWorkoutView.tableView.reloadData()
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
