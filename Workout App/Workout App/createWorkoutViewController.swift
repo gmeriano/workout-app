@@ -8,15 +8,6 @@
 
 import UIKit
 
-struct ExercisePlus {
-    var name:String?
-    var exercises:Exercise?
-    var repOrTime:Int?
-    var sets:Int?
-    var weights:Int?
-    var rest:Int?
-}
-
 class createWorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     

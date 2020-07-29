@@ -77,7 +77,7 @@ class AddExerciseToWorkoutViewController: UIViewController {
         let exerciseToSend = ExercisePlus(name: dropDownMenu.text, exercise: selectedExercise, repTimeIndicator: repTime, repOrTime: repsOrTimeField.text, sets: setsField.text, weights: weightsField.text, rest: restField.text)
         
         let createWorkoutView = presentingViewController as! createWorkoutViewController
-        createWorkoutView.exercises.append(exerciseToSend)
+        createWorkoutView.exercisePlusArray.append(exerciseToSend)
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
