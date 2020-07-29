@@ -19,6 +19,16 @@ struct Workout {
     var rest:[Int]?
 }
 
+struct ExercisePlus {
+    var name:String?
+    var exercise:Exercise?
+    var repTimeIndicator:Int?
+    var repOrTime:String?
+    var sets:String?
+    var weights:String?
+    var rest:String?
+}
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     

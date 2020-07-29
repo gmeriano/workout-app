@@ -121,27 +121,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-un-E99" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="132" y="295" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJj-sf-sXo">
-                                <rect key="frame" x="187" y="584" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gru-bm-DFE">
+                                <rect key="frame" x="157.5" y="125.5" width="99" height="591"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-un-E99" customClass="DropDown" customModule="iOSDropDown">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-6L-8jJ">
+                                        <rect key="frame" x="0.0" y="94" width="99" height="32"/>
+                                        <segments>
+                                            <segment title="Reps"/>
+                                            <segment title="Time"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="repOrTimeChanged:" destination="g5x-pt-15y" eventType="valueChanged" id="puF-sA-3uG"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8A-Xy-sxL">
+                                        <rect key="frame" x="0.0" y="185" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-5f-uxM">
+                                        <rect key="frame" x="0.0" y="279" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="maU-d1-het">
+                                        <rect key="frame" x="0.0" y="373" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xu0-Iq-kPI">
+                                        <rect key="frame" x="0.0" y="467" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raV-VE-nIg">
+                                        <rect key="frame" x="0.0" y="561" width="49" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="addExerciseToWorkout:" destination="g5x-pt-15y" eventType="touchUpInside" id="kPc-Ie-KFc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gru-bm-DFE" firstAttribute="centerX" secondItem="q8I-GH-DGm" secondAttribute="centerX" id="fOo-sM-0ig"/>
+                            <constraint firstItem="gru-bm-DFE" firstAttribute="centerY" secondItem="q8I-GH-DGm" secondAttribute="centerY" id="rZy-f4-hdR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vlo-t5-5bg"/>
                     </view>
                     <navigationItem key="navigationItem" id="e0B-iw-PXd"/>
                     <connections>
                         <outlet property="dropDownMenu" destination="uPc-un-E99" id="jrC-Lx-56n"/>
-                        <outlet property="valueLabel" destination="GJj-sf-sXo" id="zYB-yy-bGu"/>
+                        <outlet property="repsOrTimeField" destination="W8A-Xy-sxL" id="Frd-Ka-5xq"/>
+                        <outlet property="repsOrTimeIndicator" destination="d1d-6L-8jJ" id="PEX-Vr-ZV1"/>
+                        <outlet property="restField" destination="Xu0-Iq-kPI" id="QAg-tI-7XZ"/>
+                        <outlet property="setsField" destination="m0o-5f-uxM" id="yjk-ep-nqH"/>
+                        <outlet property="weightsField" destination="maU-d1-het" id="tnf-gP-JwH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpA-cb-eWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
