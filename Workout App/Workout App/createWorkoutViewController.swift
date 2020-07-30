@@ -34,6 +34,11 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedIndex = indexPath.row
+        performSegue(withIdentifier: "GoToExercisePlus", sender: self)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +83,19 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
         self.ref!.child(userId).child("Workouts").child(workoutId!.key!).setValue(workoutDict)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+            
+            if segue.destination is ExercisePlusViewController {
+                
+                let vc = segue.destination as? ExercisePlusViewController
+    //            vc?.exercise = self.exerciseArray[exIdx]
+                vc?.exPlus = exercisePlusArray[tableView.indexPathForSelectedRow!.row]
+            }
+            
+            
+            
+        }
     
 }

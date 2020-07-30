@@ -24,6 +24,7 @@
 		FAA893B7248714B4002E0246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA893B6248714B4002E0246 /* Assets.xcassets */; };
 		FAA893C5248714B5002E0246 /* Workout_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893C4248714B5002E0246 /* Workout_AppTests.swift */; };
 		FAA893D0248714B5002E0246 /* Workout_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA893CF248714B5002E0246 /* Workout_AppUITests.swift */; };
+		FAC08E8624D25C93004A06BE /* ExercisePlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC08E8524D25C93004A06BE /* ExercisePlusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FAA893CB248714B5002E0246 /* Workout AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workout AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA893CF248714B5002E0246 /* Workout_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout_AppUITests.swift; sourceTree = "<group>"; };
 		FAA893D1248714B5002E0246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC08E8524D25C93004A06BE /* ExercisePlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				098842AA2498420500A5EBD2 /* ExerciseViewController.swift */,
 				098842B024B294DF00A5EBD2 /* AddExerciseToWorkoutViewController.swift */,
 				098842B224B2A6F500A5EBD2 /* createWorkoutViewController.swift */,
+				FAC08E8524D25C93004A06BE /* ExercisePlusViewController.swift */,
 				FAA893B3248714AA002E0246 /* Main.storyboard */,
 				FAA893B6248714B4002E0246 /* Assets.xcassets */,
 				FAA893BB248714B4002E0246 /* Info.plist */,
@@ -431,6 +434,7 @@
 				FAA893AC248714AA002E0246 /* AppDelegate.swift in Sources */,
 				098842A924983F0200A5EBD2 /* AddExerciseViewController.swift in Sources */,
 				098842AF249AD36300A5EBD2 /* SignInViewController.swift in Sources */,
+				FAC08E8624D25C93004A06BE /* ExercisePlusViewController.swift in Sources */,
 				098842AB2498420500A5EBD2 /* ExerciseViewController.swift in Sources */,
 				098842B324B2A6F500A5EBD2 /* createWorkoutViewController.swift in Sources */,
 				FAA893AE248714AA002E0246 /* SceneDelegate.swift in Sources */,
