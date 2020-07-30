@@ -132,7 +132,9 @@ class SignInViewController: UIViewController {
             // sends the userId to SecondViewController
             let vc = segue.destination as? UITabBarController
             let exercisesVC = vc?.customizableViewControllers?[0] as? SecondViewController
+            let workoutsVC = vc?.customizableViewControllers?[1] as? FirstViewController
             exercisesVC?.userId = self.userId!
+            workoutsVC?.userId = self.userId!
             
         }
         

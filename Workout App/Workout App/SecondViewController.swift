@@ -72,7 +72,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // exercise array needs at least 1 exercise at load
         let sampleExercise = Exercise(name: "pushup", image: "none", description: "push yourself up", video: "none", equipment: "body", muscleGroups: "chest", alternativeExercises: "bench press", intensity: "2", key: "none")
-        exerciseArray.append(sampleExercise)
+        //exerciseArray.append(sampleExercise)
         print("3")
         // retrieves posts and listens for updated exercises for given user
         databaseUpdateHandle = ref?.child(self.userId).child("Exercises").observe(.childChanged, with: { (DataSnapshot) in

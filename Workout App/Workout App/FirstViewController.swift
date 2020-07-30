@@ -27,6 +27,7 @@ struct ExercisePlus {
     var sets:String?
     var weights:String?
     var rest:String?
+    var key:String?
 }
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -36,8 +37,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // workout array
     
-var workoutArray = [Workout]()
-var exerciseArray = [Exercise]()
+    var workoutArray = [Workout]()
+    var exerciseArray = [Exercise]()
+    
+    var userId:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,5 +90,19 @@ var exerciseArray = [Exercise]()
      }
     }
 
+    @IBAction func addWorkout(_ sender: Any) {
+        print(presentingViewController)
+        self.performSegue(withIdentifier: "AddWorkoutSegue", sender: self)
+    }
+    
+    // Sends the userId to AddExerciseViewController whenever the user wants to add a new exercise
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is createWorkoutViewController {
+            
+            let vc = segue.destination as? createWorkoutViewController
+            vc?.userId = self.userId
+        }
+    }
 }
 

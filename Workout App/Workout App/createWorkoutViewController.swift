@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class createWorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var ref:DatabaseReference?
     
+    // current id of user
+    var userId:String = ""
+
+
     @IBOutlet weak var tableView: UITableView!
     
     var exercisePlusArray = [ExercisePlus]()
@@ -31,7 +37,12 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // get reference to database
+        ref = Database.database().reference()
+        
+        print(userId)
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,14 +52,31 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func submitWorkout(_ sender: Any) {
+        
+        let workoutDict: NSMutableDictionary = [:]
+        let workoutId = ref?.childByAutoId()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        for exercise in exercisePlusArray {
+            
+            let id = ref?.childByAutoId()
+            print(exercise.name!)
+            let dict: NSDictionary = [
+                "Exercise": exercise.key!,
+                "Name": exercise.name!,
+                "RepOrTimeInd": exercise.repTimeIndicator!,
+                "RepTime": exercise.repOrTime!,
+                "Sets": exercise.sets!,
+                "Rest": exercise.rest!,
+                "Weights": exercise.weights!
+            ]
+            print("trying")
+            workoutDict[id!.key!] = dict
+            print("success")
+            
+        }
+        self.ref!.child(userId).child("Workouts").child(workoutId!.key!).setValue(workoutDict)
+        
     }
-    */
-
+    
 }
