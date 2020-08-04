@@ -11,12 +11,7 @@ import Firebase
 
 struct Workout {
     var name :String?
-    var exercises:[Exercise]
-    var repTimeIndicator:[Int]
-    var repOrTime:[Int]
-    var sets:[Int]
-    var weights:[Int]?
-    var rest:[Int]?
+    var exercises:[ExercisePlus]
 }
 
 struct ExercisePlus {
@@ -35,9 +30,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    var databaseUpdateHandle:DatabaseHandle?
+    
     // workout array
     
     var workoutArray = [Workout]()
+    var exercise2Array = [Exercise]()
+    
     var exerciseArray = [Exercise]()
     
     var userId:String = ""
@@ -45,6 +47,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let secondVC = self.tabBarController?.customizableViewControllers?[0] as! SecondViewController
+        exerciseArray = secondVC.exerciseArray
         
         // setup tableView
         tableView.delegate = self
@@ -55,12 +60,53 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let sampleExerciseA = Exercise(name: "a", image: "a", description: "a", video: "a", equipment: "a", muscleGroups: "a", alternativeExercises: "a", intensity: "a", key: "a")
         let sampleExerciseB = Exercise(name: "b", image: "b", description: "b", video: "b", equipment: "b", muscleGroups: "b", alternativeExercises: "b", intensity: "b", key: "b")
-        exerciseArray.append(sampleExerciseA)
-        exerciseArray.append(sampleExerciseB)
-        
+        exercise2Array.append(sampleExerciseA)
+        exercise2Array.append(sampleExerciseB)
+        let exPlusA = ExercisePlus(name: "a", exercise: sampleExerciseA, repTimeIndicator: 0, repOrTime: "a", sets: "a", weights: "a", rest: "a", key: "a")
+        let exPlusB = ExercisePlus(name: "b", exercise: sampleExerciseB, repTimeIndicator: 0, repOrTime: "b", sets: "b", weights: "b", rest: "b", key: "b")
         // workout array needs at least 1 workout
-        let sampleWorkout = Workout(name: "wout", exercises: exerciseArray, repTimeIndicator: [8,12], repOrTime: [0,0], sets: [3,3], weights: [10,15], rest: [30,30])
+        let sampleWorkout = Workout(name: "wout", exercises: [exPlusA, exPlusB])
         workoutArray.append(sampleWorkout)
+        
+        // set firebase reference
+        ref = Database.database().reference()
+        
+        // retrieve posts and listen for added exercises in database for given user
+        databaseHandle = ref?.child(self.userId).child("Workouts").observe(.childAdded, with: { (DataSnapshot) in
+            
+            // gets new data as NSDictionary
+            let name = DataSnapshot.key
+            let workout = DataSnapshot.value as! NSDictionary
+            print("hiya")
+            print(workout)
+            print(workout.allKeys)
+            print(workout.allValues)
+            
+            var exercisesInWorkout:[ExercisePlus] = []
+
+            for exPlus in workout.allValues {
+                let exercise = exPlus as! NSDictionary
+                let vals = exercise.allValues
+                var currentExercise:Exercise?
+                for ex in self.exerciseArray {
+                    if ex.key == (vals[0] as! String) {
+                        currentExercise = ex
+                    }
+                }
+                let currExer = ExercisePlus(name: vals[1] as? String, exercise: currentExercise, repTimeIndicator: vals[2] as? Int, repOrTime: vals[3] as? String, sets: vals[5] as? String, weights: vals[6] as? String, rest: vals[4] as? String, key: vals[0] as? String)
+                exercisesInWorkout.append(currExer)
+                
+            }
+            
+            // stores values of relevant data as array
+            //let vals = workout.allValues
+            //print(vals)
+            self.workoutArray.append(Workout(name: name, exercises: exercisesInWorkout))
+           
+            
+            // display the new exercise in view
+            self.tableView.reloadData()
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
