@@ -60,7 +60,9 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func submitWorkout(_ sender: Any) {
         
         let workoutDict: NSMutableDictionary = [:]
-        let workoutId = ref?.childByAutoId()
+        
+        // TODO set workoutName instead of using an auto id
+        let workoutName = ref?.childByAutoId()
 
         for exercise in exercisePlusArray {
             
@@ -80,8 +82,8 @@ class createWorkoutViewController: UIViewController, UITableViewDelegate, UITabl
             print("success")
             
         }
-        self.ref!.child(userId).child("Workouts").child(workoutId!.key!).setValue(workoutDict)
-        
+        self.ref!.child(userId).child("Workouts").child(workoutName!.key!).setValue(workoutDict)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
