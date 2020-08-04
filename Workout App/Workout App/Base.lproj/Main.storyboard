@@ -75,8 +75,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-LI-M85">
-                                <rect key="frame" x="152" y="177" width="101" height="102.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-LI-M85">
+                                <rect key="frame" x="157" y="296" width="101" height="317.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-We-Faf">
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
@@ -85,29 +85,36 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps or Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-aE-s4d">
-                                        <rect key="frame" x="0.0" y="20.5" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="57.5" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKT-Bf-y3R">
-                                        <rect key="frame" x="0.0" y="41" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="115" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9N-13-oao">
-                                        <rect key="frame" x="0.0" y="61.5" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="172.5" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-U3-mTj">
-                                        <rect key="frame" x="0.0" y="82" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="230" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-fD-DRZ">
+                                        <rect key="frame" x="0.0" y="287.5" width="101" height="30"/>
+                                        <state key="normal" title="Edit Exercise"/>
+                                        <connections>
+                                            <action selector="editExercise:" destination="UKu-78-PE3" eventType="touchUpInside" id="BT2-FC-SHY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -121,11 +128,12 @@
                         <outlet property="restLabel" destination="0Ig-U3-mTj" id="fsG-Sk-eZL"/>
                         <outlet property="setsLabel" destination="nKT-Bf-y3R" id="l85-CA-o0s"/>
                         <outlet property="weightLabel" destination="j9N-13-oao" id="W4Z-sQ-CS4"/>
+                        <segue destination="g5x-pt-15y" kind="show" identifier="editExercise" id="Omv-oo-RQ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ykj-RE-TVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="-1028"/>
+            <point key="canvasLocation" x="662.31884057971024" y="-1028.5714285714284"/>
         </scene>
         <!--Create Workout View Controller-->
         <scene sceneID="dN3-KG-JYP">
@@ -687,7 +695,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nMw-9F-OHu"/>
+        <segue reference="mXi-KD-XkA"/>
+        <segue reference="Omv-oo-RQ5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
