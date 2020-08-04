@@ -41,9 +41,15 @@ class AddExerciseToWorkoutViewController: UIViewController {
         restField.placeholder = "Rest"
         
         // put exercises into dropdown menu
-        let tabView = presentingViewController?.presentingViewController as! UITabBarController
-        let secondView = tabView.customizableViewControllers![0] as! SecondViewController
-        exerciseArray = secondView.exerciseArray
+        if let tabView = presentingViewController?.presentingViewController as? UITabBarController {
+            let secondView = tabView.customizableViewControllers![0] as! SecondViewController
+            exerciseArray = secondView.exerciseArray
+        }
+        else {
+            let tabView = presentingViewController?.presentingViewController?.presentingViewController as! UITabBarController
+            let secondView = tabView.customizableViewControllers![0] as! SecondViewController
+            exerciseArray = secondView.exerciseArray
+        }
         
         var exerciseNameArray = [String]()
         for exercise in exerciseArray {
@@ -76,9 +82,15 @@ class AddExerciseToWorkoutViewController: UIViewController {
         
         let exerciseToSend = ExercisePlus(name: dropDownMenu.text, exercise: selectedExercise, repTimeIndicator: repTime, repOrTime: repsOrTimeField.text, sets: setsField.text, weights: weightsField.text, rest: restField.text, key: selectedExercise?.key)
         
-        let createWorkoutView = presentingViewController as! createWorkoutViewController
-        createWorkoutView.exercisePlusArray.append(exerciseToSend)
-        createWorkoutView.tableView.reloadData()
+        if let createWorkoutView = presentingViewController as? createWorkoutViewController {
+            createWorkoutView.exercisePlusArray.append(exerciseToSend)
+            createWorkoutView.tableView.reloadData()
+        }
+        else {
+            let  createWorkoutView = presentingViewController?.presentingViewController as! createWorkoutViewController 
+            createWorkoutView.exercisePlusArray.append(exerciseToSend)
+            createWorkoutView.tableView.reloadData()
+        }
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
