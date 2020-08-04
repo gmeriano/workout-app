@@ -50,11 +50,10 @@ class ExercisePlusViewController: UIViewController {
     
         if segue.destination is AddExerciseToWorkoutViewController {
              
-            let tabView = presentingViewController as! UITabBarController
-            let secondView = tabView.customizableViewControllers![0] as! ExercisePlusViewController
+            let tabView = presentingViewController?.presentingViewController as! UITabBarController
+            let secondView = tabView.customizableViewControllers![0] as! SecondViewController
             let vc = segue.destination as? AddExerciseToWorkoutViewController
             // name, reps or time, sets, weight, rest
-            vc?.dropDow
                       
             
         }
