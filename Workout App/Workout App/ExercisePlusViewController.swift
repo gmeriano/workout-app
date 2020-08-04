@@ -41,23 +41,24 @@ class ExercisePlusViewController: UIViewController {
         
     }
     
-    
-    @IBAction func editExercise(_ sender: Any) {
-        self.performSegue(withIdentifier: "editExercise", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-        if segue.destination is AddExerciseToWorkoutViewController {
-             
-            let tabView = presentingViewController?.presentingViewController as! UITabBarController
-            let secondView = tabView.customizableViewControllers![0] as! SecondViewController
-            let vc = segue.destination as? AddExerciseToWorkoutViewController
-            // name, reps or time, sets, weight, rest
-                      
+  
+    @IBAction func deleteExercise(_ sender: Any) {
+        let vc = presentingViewController as! createWorkoutViewController
+        for i in 0...vc.exercisePlusArray.count {
+            print(i)
+            print(vc.exercisePlusArray)
+            let ex = vc.exercisePlusArray[i]
+            if ex.name == exPlus?.name {
+                vc.exercisePlusArray.remove(at: i)
+                break
+            }
             
         }
+        vc.tableView.reloadData()
+        vc.dismiss(animated: true, completion: nil)
+        
     }
+    
     
 
     

@@ -76,43 +76,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-LI-M85">
-                                <rect key="frame" x="157" y="296" width="101" height="317.5"/>
+                                <rect key="frame" x="157" y="296" width="106" height="317.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-We-Faf">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps or Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-aE-s4d">
-                                        <rect key="frame" x="0.0" y="57.5" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="57.5" width="106" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKT-Bf-y3R">
-                                        <rect key="frame" x="0.0" y="115" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="115" width="106" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9N-13-oao">
-                                        <rect key="frame" x="0.0" y="172.5" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="172.5" width="106" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-U3-mTj">
-                                        <rect key="frame" x="0.0" y="230" width="101" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="230" width="106" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-fD-DRZ">
-                                        <rect key="frame" x="0.0" y="287.5" width="101" height="30"/>
-                                        <state key="normal" title="Edit Exercise"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJl-Q7-A1z">
+                                        <rect key="frame" x="0.0" y="287.5" width="106" height="30"/>
+                                        <state key="normal" title="Delete Exercise"/>
                                         <connections>
-                                            <action selector="editExercise:" destination="UKu-78-PE3" eventType="touchUpInside" id="BT2-FC-SHY"/>
+                                            <action selector="deleteExercise:" destination="UKu-78-PE3" eventType="touchUpInside" id="oJQ-VJ-ZNg"/>
                                         </connections>
                                     </button>
                                 </subviews>
